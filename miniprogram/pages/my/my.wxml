@@ -1,0 +1,8 @@
+<view class="user_box">
+
+ <image src="{{user.avatarUrl}}" mode=""/>
+ <view class="nick">{{user.User_name}}</view>
+ <view class="points">{{user.Points}}</view>
+</view>
+
+<view bindtap="cancle" class="cancle">退出登录</view>

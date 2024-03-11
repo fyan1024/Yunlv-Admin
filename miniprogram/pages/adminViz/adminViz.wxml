@@ -1,0 +1,37 @@
+<!--pages/adminViz/adminViz.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  
+  <van-tab title="用户展示">
+    <view class="user-item" wx:for="{{ userData }}" wx:key="index" bindtap="showUserDetail" data-index="{{ index }}">
+      <image class="user-image" src="{{ item.avatarUrl }}"></image>
+      <view class="user-info">
+        <view class="user-username">{{ item.User_name }}</view>
+        <view class="user-university">学校：{{ item.University }}</view>
+        <view class="user-password">密码：{{ item.passWord }}</view>
+        <view class="user-student">学生身份：{{ item.Is_student ? '已验证' : '未验证' }}</view>
+      </view>
+    </view>
+  </van-tab>
+
+  <van-tab title="床源展示">
+    <view class="bed-item" wx:for="{{ bedData }}" wx:key="index" bindtap="showBedDetail" data-index="{{ index }}">
+      <image class="bed-image" src="{{ item.picture_add }}"></image>
+      <view class="bed-info">
+        <view class="bed-university">{{ item.university }}</view>
+        <view class="bed-announcements">公告：{{ item.announcements }}</view>
+        <view class="bed-address">地址：{{ item.address }}</view>
+        <view class="bed-ownerName">房主：{{ item.ownerName }}</view>
+      </view>
+    </view>
+
+  </van-tab>
+    
+
+  <van-tab title="订单展示">
+    <view class="order-item" wx:for="{{ orderData }}" wx:key="index" data-index="{{ index }}">
+      <van-card class="order-card" tag="{{item.university}}" desc="{{item.time}}" title="床位号：{{item.Bed_id}}" thumb="{{ item.picture_add }}" data-order-id="{{item._id}}" catchtap="goToOrderDetail"></van-card>
+    </view>
+    
+  </van-tab>
+
+</van-tabs>

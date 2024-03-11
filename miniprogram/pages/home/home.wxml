@@ -1,0 +1,5 @@
+<!--pages/home/home.wxml-->
+<view>
+  <button type="primary">点击获取数据</button>
+  <text>pages/home/home.wxml</text>
+</view>
