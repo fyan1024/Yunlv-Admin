@@ -1,5 +1,12 @@
 <!--pages/home/home.wxml-->
-<view>
-  <button type="primary">点击获取数据</button>
-  <text>pages/home/home.wxml</text>
+
+<view class="page">
+
+  <van-cell-group>  
+    <van-button custom-class="first-button" type="primary" size="large" color="#7232dd" round bind:tap="showData" plain>展示数据</van-button>
+    <van-button type="primary" size="large" color="#7232dd" round bind:tap="auditBed" plain>审核床源</van-button>
+    <van-button type="primary" size="large" color="#7232dd" round bind:tap="auditIdentity" plain>审核身份</van-button>
+    <van-button custom-class="last-button" type="primary" size="large" color="#7232dd" round bind:tap="auditReport" plain>审核举报</van-button>
+  </van-cell-group>
+
 </view>

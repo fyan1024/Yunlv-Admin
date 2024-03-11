@@ -1,1 +1,23 @@
 /* pages/home/home.wxss */
+
+.page {
+  background-color: #c2d5f1; /* 替换为你想要的颜色代码 */
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+}
+
+.van-button {
+  margin-bottom: 10rpx;
+}
+
+.first-button {
+  margin-top: 20rpx;
+}
+
+.last-button {
+  margin-bottom: 30rpx;
+}
+

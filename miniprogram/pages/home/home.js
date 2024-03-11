@@ -8,6 +8,32 @@ Page({
 
   },
 
+    // 展示数据按钮跳转
+  showData: function() {
+    wx.navigateTo({
+      url: '/pages/adminViz/adminViz'
+    });
+  },
+  
+  // 审核床源按钮跳转  
+  auditBed: function() {
+    wx.navigateTo({
+      url: '/pages/checkbed/checkbed'
+    });
+  },
+  
+  auditIdentity: function() {
+    wx.navigateTo({
+      url: '/pages/checkstudent/checkstudent'
+    });
+  },
+
+  auditReport: function() {
+    wx.navigateTo({
+      url: '/pages/checkreport/checkreport'
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
