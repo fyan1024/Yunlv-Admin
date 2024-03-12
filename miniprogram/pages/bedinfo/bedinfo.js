@@ -38,7 +38,6 @@ Page({
       });
   },
   onClickButton1() {
-    const that = this
     // 初始化数据库引用
     const db = wx.cloud.database()
     // 获取 Bed 集合引用
@@ -53,15 +52,21 @@ Page({
       },
       success: res => {
         console.log('更新成功', res)
+        setTimeout(() => {
+          this.showToast('审核通过成功', 'success')
+        }, 500)
+        wx.navigateBack({
+          delta: 1
+        })
       },
       fail: err => {
         console.error('更新失败', err)
+        this.showToast('审核通过失败', 'error')
       }
     })
   },
 
   onClickButton2() {
-    const that = this
     // 初始化数据库引用
     const db = wx.cloud.database()
     // 获取 Bed 集合引用
@@ -76,10 +81,25 @@ Page({
       },
       success: res => {
         console.log('更新成功', res)
+        setTimeout(() => {
+          this.showToast('审核不通过成功', 'success')
+        }, 500)
+        wx.navigateBack({
+          delta: 1
+        })
       },
       fail: err => {
         console.error('更新失败', err)
+        this.showToast('审核不通过失败', 'error')
       }
     })
   },
+
+  showToast(title, icon) {
+    wx.showToast({
+      title: title,
+      icon: icon,
+      duration: 1500,
+    })
+  }
 });
