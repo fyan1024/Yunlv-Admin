@@ -46,6 +46,7 @@
 
     "pages/adminViz/adminViz",
     "pages/checkreport/checkreport",
+    "pages/detail/detail",
     "pages/checkbed/checkbed",
     "pages/checkstudent/checkstudent"
 
