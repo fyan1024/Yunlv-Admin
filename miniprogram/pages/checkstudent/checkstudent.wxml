@@ -2,8 +2,7 @@
 <van-tabs active="{{ active }}" bind:change="onChange">
   <!-- 1.未被举报页面 -->
   <van-tab title="未验证身份">
-    <view class="user-item" wx:for="{{ userData }}" wx:key="index" catchtap="showUserDetail" data-index="{{ index }}">
-      <block wx:if="{{ !item.Is_student }}">
+    <view class="user-item" wx:if="{{ !item.Is_student }}" wx:for="{{ userData }}" wx:key="index" catchtap="showUserDetail" data-index="{{ index }}">
         <image class="user-image" src="{{ item.avatarUrl }}"></image>
         <view class="user-info" style="width: 530rpx; height: 160rpx; display: block; box-sizing: border-box">
           <view class="user-username">{{ item.User_name }}</view>
@@ -13,15 +12,13 @@
           <button class="button1" style="width: 182rpx; height: 92rpx; display: block; box-sizing: border-box; left: 0rpx; top: -144rpx; position: relative" catchtap="showPage" data-index="{{ index }}">查看身份</button>
           <button class="button2" style="width: 182rpx; height: 68rpx; display: block; box-sizing: border-box; left: 0rpx; top: -131rpx; position: relative" catchtap="showResult" data-index="{{ index }}">审核</button>
         </view>
-      </block>
     </view>
   </van-tab>
 
 
   <!-- 2.已被举报页面 -->
   <van-tab title="已验证身份">
-    <view class="user-item" wx:for="{{ userData }}" wx:key="index" bindtap="showUserDetail" data-index="{{ index }}">
-      <block wx:if="{{ item.Is_student }}">
+    <view class="user-item" wx:if="{{ item.Is_student }}" wx:for="{{ userData }}" wx:key="index" bindtap="showUserDetail" data-index="{{ index }}">
         <image class="user-image" src="{{ item.avatarUrl }}"></image>
         <view class="user-info">
           <view class="user-username">{{ item.User_name }}</view>
@@ -29,7 +26,6 @@
           <view class="user-password">密码：{{ item.passWord }}</view>
           <view class="user-student">学生身份：{{ item.Is_student ? '已验证' : '未验证' }}</view>
         </view>
-      </block>
     </view>
 
   </van-tab>
