@@ -1,0 +1,30 @@
+<!--pages/bedinfo/bedinfo.wxml-->
+<!--pages/bedinfo/bedinfo.wxml-->
+<view class="view_contain">
+  <view class="pic">
+    <image class="image" mode='aspectFill' src="{{bedinfo.picture_add}}"></image>
+  </view>
+
+  <view class="info">
+    <van-cell-group title="基本信息">
+      <van-cell title="地址" value="{{bedinfo.address}}" />
+      <van-cell title="房间号" value="{{bedinfo.dormitory_num}}" />
+      <van-cell title="床号" value="{{bedinfo.bed_num}}" />
+      <van-cell title="备注" value="{{bedinfo.announcements}}" />
+    </van-cell-group>
+  </view>
+  <view class="otherinfo">
+    <van-grid>
+      <van-grid-item icon="contact-o" text="房主：{{bedinfo.ownerName}}" />
+      <van-grid-item icon="star-o" text="评分：{{bedinfo.rate}}" />
+      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="文字" />
+    </van-grid>
+
+  </view>
+
+  <van-goods-action>
+    <van-goods-action-button text="审核通过" color="green" bind:click="onClickButton1" disabled="{{isChecked}}" />
+    <van-goods-action-button text="审核不通过" color="red" bind:click="onClickButton2" disabled="{{isChecked}}" />
+  </van-goods-action>
+</view>

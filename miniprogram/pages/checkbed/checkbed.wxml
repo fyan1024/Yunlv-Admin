@@ -1,2 +1,81 @@
 <!--pages/checkbed/checkbed.wxml-->
-<text>pages/checkbed/checkbed.wxml</text>
+<van-tabs active="a">
+  <van-tab title="未审核" name="a">
+    <view class="view_contain">
+      <view class="view_block">
+        <van-row gutter="15">
+          <van-col span="12" wx:for="{{unCheckedBeds}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+            <!-- 每个 van-col 包含两个框格 -->
+            <view class="display-frame" data-beds-id="{{item._id}}" bindtap="goToDetail">
+              <!-- 第一个框格 -->
+              <image class="image" src="{{item.picture_add}}"></image>
+              <view class="text-info">
+                <van-col span="17">
+                  <view class="main-name">{{item.city}}</view>
+                  <view class="sub-name">{{item.university}}</view>
+                </van-col>
+                <van-col span="4">
+                  <view class="like-info">
+                    <van-tag type="danger">未审核</van-tag>
+                  </view>
+                </van-col>
+              </view>
+            </view>
+          </van-col>
+        </van-row>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="审核未通过" name="b">
+    <view class="view_contain">
+      <view class="view_block">
+        <van-row gutter="15">
+          <van-col span="12" wx:for="{{unPassedBeds}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+            <!-- 每个 van-col 包含两个框格 -->
+            <view class="display-frame" data-beds-id="{{item._id}}" bindtap="goToDetail">
+              <!-- 第一个框格 -->
+              <image class="image" src="{{item.picture_add}}"></image>
+              <view class="text-info">
+                <van-col span="17">
+                  <view class="main-name">{{item.city}}</view>
+                  <view class="sub-name">{{item.university}}</view>
+                </van-col>
+                <van-col span="4">
+                  <view class="like-info">
+                    <van-tag type="danger">{{item.Is_pass?'通过':'未通过'}}</van-tag>
+                  </view>
+                </van-col>
+              </view>
+            </view>
+          </van-col>
+        </van-row>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="审核通过" name="c">
+    <view class="view_contain">
+      <view class="view_block">
+        <van-row gutter="15">
+          <van-col span="12" wx:for="{{PassedBeds}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+            <!-- 每个 van-col 包含两个框格 -->
+            <view class="display-frame" data-beds-id="{{item._id}}" bindtap="goToDetail">
+              <!-- 第一个框格 -->
+              <image class="image" src="{{item.picture_add}}"></image>
+              <view class="text-info">
+                <van-col span="17">
+                  <view class="main-name">{{item.city}}</view>
+                  <view class="sub-name">{{item.university}}</view>
+                </van-col>
+                <van-col span="4">
+                  <view class="like-info">
+                    <van-tag type="danger">{{item.Is_pass?'通过':'未通过'}}</van-tag>
+                  </view>
+                </van-col>
+              </view>
+            </view>
+          </van-col>
+        </van-row>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>

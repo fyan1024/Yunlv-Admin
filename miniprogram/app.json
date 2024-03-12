@@ -40,17 +40,17 @@
 
   "pages": [
     "pages/login/login",
-    
+    "pages/sign/sign",
     "pages/my/my",
     "pages/home/home",
-
+    "pages/detail/detail",
     "pages/adminViz/adminViz",
     "pages/checkreport/checkreport",
-    "pages/detail/detail",
     "pages/checkbed/checkbed",
-    "pages/checkstudent/checkstudent"
-
-
+    "pages/checkstudent/checkstudent",
+    "pages/webpage/webpage",
+    "pages/bedinfo/bedinfo"
+    
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

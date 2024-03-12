@@ -1,0 +1,4 @@
+<!--pages/webpage/webpage.wxml-->
+<view>
+  <web-view src="https://www.chsi.com.cn/xlcx/bg.do?vcode={{code}}&srcid=bgcx"></web-view>
+</view>

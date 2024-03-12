@@ -13,11 +13,11 @@ Page({
    */
   //c main
   onLoad(options) {
-     if(wx.getStorageSync('userInfo')){//用户保留登录状态
-        wx.navigateTo({
-          url: '/pages/sign/sign',
-        })
-     }
+    //  if(wx.getStorageSync('userInfo')){//用户保留登录状态
+    //     wx.navigateTo({
+    //       url: '/pages/sign/sign',
+    //     })
+    //  }
   },
   //前往注册页面
 
