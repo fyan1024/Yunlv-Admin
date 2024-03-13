@@ -7,6 +7,7 @@ Page({
     userData: [], //存放所有用户数据
     bedData: [], // 存放所有床源数据
     orderData: [], //存放所有订单数据
+    adminData: [], //存放所有管理员数据
 
 
   },
@@ -19,6 +20,8 @@ Page({
       statusText = '展示床源';
     } else if (event.detail.name === 2) {
       statusText = '展示订单';
+    } else if (event.detail.name === 3) {
+      statusText = '展示管理员';
     }
     wx.showToast({
       title: `${statusText}`,
@@ -27,11 +30,28 @@ Page({
   },
 
   onLoad(options) {
+    this.GetAdminData();
     this.GetUserData();
     this.GetBedData();
     this.GetOrderData();
 
   },
+
+  GetAdminData(){
+    db.collection('admin').get({
+      success: (resAdmin) => {
+        console.log('查询用户成功，所有管理员数据：', resAdmin.data);
+        this.setData({
+          adminData: resAdmin.data,
+        });
+      },
+      fail: (err) => {
+        console.error('查询管理员失败：', err);
+      },
+    });
+
+  },
+
   GetOrderData(){
     db.collection('Order').get({
       success: (resOrder) => {

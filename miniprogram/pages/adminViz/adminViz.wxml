@@ -34,4 +34,16 @@
     
   </van-tab>
 
+  <van-tab title="管理">
+    <view class="user-item" wx:for="{{ adminData }}" wx:key="index"  data-index="{{ index }}">
+      <image class="admin-image" src="{{ item.avatarUrl }}"></image>
+      <view class="admin-info">
+        <view class="admin-username">{{ item.User_name }}</view>
+        <view class="admin-phone">电话：{{ item.phone }}</view>
+        <view class="admin-password">密码：{{ item.passWord }}</view>
+      </view>
+    </view>
+
+  </van-tab>
+
 </van-tabs>
